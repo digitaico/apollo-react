@@ -10,14 +10,20 @@ const typeDefs = gql`
 		isBooked: Boolean!
 	}
 
-	type User = {
+	type Rocket {
+		id: ID!
+		name: String
+		type: String
+	}
+
+	type User {
 		id: ID!
 		email: String!
 		trips: [Launch]!
 		token: String
 	}
 
-	type Mission = {
+	type Mission {
 		name: String
 		missionPatch(size: PatchSize): String
 	}
@@ -46,4 +52,4 @@ const typeDefs = gql`
 	}
 `;
 
-module.exports typeDefs;
+module.exports = typeDefs;
